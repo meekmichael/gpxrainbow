@@ -19,6 +19,7 @@ func MustHex(s string) colorful.Color {
 	return c
 }
 
+// GetInterpolatedColorFor is borrowed from https://github.com/lucasb-eyer/go-colorful
 func GetGradientTable() GradientTable {
 	// I'm red/green colorblind and I picked these colors because they're easy
 	// for me to see.  YMMV.  TODO: make this customizable

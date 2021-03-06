@@ -46,7 +46,7 @@ func Render(opts Options, img image.Image) (image.Image, error) {
 	for i := 0; i < opts.Steps; i++ {
 		step := float64(i) * float64(rainbowWidth/opts.Steps)
 		gc.DrawRectangle(float64(gc.Width())-rainbowWidth-20+step, float64(gc.Height())-rainbowYTop, rainbowWidth-step, rainbowHeight)
-		gc.SetColor(pattern.GetGradientTable().GetInterpolatedColorFor(1 - (float64(i) / float64(opts.Steps))))
+		gc.SetColor(pattern.GetGradientTable().GetInterpolatedColorFor(float64(i) / float64(opts.Steps)))
 		gc.Fill()
 	}
 	gc.SetColor(textColor)
