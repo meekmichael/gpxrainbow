@@ -62,4 +62,4 @@ Making a map showing where I took the most morning walks one month:
 ```
 > ./gpxrainbow -x 1024 -y 768 -m proximity --proximity_distance 20 -o example.png ../workout-routes/route_2019-05-*
 ```
-[example image](./example/example.png)
+![example image](./example/example.png)
