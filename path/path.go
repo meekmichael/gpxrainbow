@@ -182,6 +182,9 @@ func gpxToColorPath(conf config.MapConfig, filename string, posRegistry *positio
 	paths := []*colorpath.ColorPath{}
 	elevDiff := conf.MaxElevation - conf.MinElevation
 	for _, trk := range gpxdata.Tracks {
+		if conf.Mode == config.MODE_INPUT || conf.Mode == config.MODE_PROXIMITY {
+			posRegistry.Tracks++
+		}
 		for _, seg := range trk.Segments {
 			lastColor := pattern.GetGradientTable().GetInterpolatedColorFor(0)
 			p := colorpath.NewColorPath(float64(conf.LineWidth))
