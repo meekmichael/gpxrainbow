@@ -1,7 +1,7 @@
 
 # GPXRainbow
 
-GPXRainbow takes one or more .gpx files and plots their paths on an openstreetmap, adding color along the path to convey more information.
+GPXRainbow takes one or more .gpx files and plots their paths on an openstreetmap, adding color along the path to convey more information as a heat map.
 
  
 ```
