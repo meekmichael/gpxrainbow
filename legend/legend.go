@@ -52,6 +52,9 @@ func Render(opts Options, img image.Image) (image.Image, error) {
 	gc.SetColor(textColor)
 	gc.DrawStringAnchored(opts.Title, float64(gc.Width())-(rainbowWidth/2)-20, float64(gc.Height()-rainbowYTop+rainbowHeight+10), 0.5, 0.5)
 	lSteps := 4.0
+	if float64(opts.Steps) < lSteps {
+		lSteps = float64(opts.Steps)
+	}
 	lStep := 0.0
 	for i := opts.MinVal; i <= opts.MaxVal; i += ((opts.MaxVal - opts.MinVal) / lSteps) {
 		gc.DrawStringAnchored(fmt.Sprintf(opts.FormatString, i), float64(gc.Width())-rainbowWidth-20+(rainbowWidth*lStep), float64(gc.Height())-outerYHeight+5, 0.5, 0.5)
